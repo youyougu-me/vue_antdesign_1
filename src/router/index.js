@@ -3,10 +3,22 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
+  {
+    path: '/',
+    redirect: '/home'
+
+  },
+  {
+    path: '/home',
+    component: () => import('@/views/Home/index')
+  },
+  {
+    path: '/slot',
+    component: () => import('@/views/Slot/index')
+  },
   {
     path: '/page404',
-    name: 'About',
     component: () => import('@/views/Page404/index')
   }
 ]
